@@ -1,0 +1,40 @@
+/*---------------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  font-size: 100%;
+  line-height: normal;
+  overflow: hidden; }
+
+a:link, a:hover, a:visited, a:active {
+  outline: 0; }
+
+.cart-item.ng-enter {
+  -webkit-transition: 0.6s ease-out all;
+  transition: 0.6s  ease-out all;
+  background-color: #ffa000;
+  color: rgba(33, 33, 33, 0.3); }
+
+.cart-item.ng-enter-active {
+  background-color: white; }
+
+/* my buttons */
+.btn {
+  background: #ff8f00;
+  color: #F2F2F2;
+  -webkit-transition: 0.2s  ease-out all;
+  transition: 0.2s  ease-out all; }
+
+.btn:focus {
+  background: #e65100;
+  color: #FFF;
+  -webkit-transition: 0.5s  ease-out all;
+  transition: 0.5s  ease-out all; }
+
+.btn:hover {
+  background: #f57c00;
+  color: #FFF;
+  -webkit-transition: 0.3s  ease-out all;
+  transition: 0.3s  ease-out all; }

@@ -1,0 +1,133 @@
+<div class="row" >
+     <div class="col s4">
+        <h2>Delivery Adress</h2>
+        <div ng-controller="ExampleCtrl">
+            testform
+            <form>
+                Name: <input type="text" ng-model="user.name" /><br />
+                E-mail: <input type="email" ng-model="user.email" /><br />
+                Gender: <input type="radio" value="male" name="gender" id="test1" ng-model="user.gender"/>
+                        <label for="test1">Male</label>
+                        <input type="radio" value="female" name="gender" id="test2" ng-model="user.gender"/>
+                        <label for="test2">Female</label>
+                        <br /> <br /> <br />
+                <input type="submit" value="submit" class="btn" ng-click="update(user)">
+            </form>
+            <p>form = {{user}}</p>
+            <p>masta = {{masta}}</p>
+ <!--           <div ng-controller="Test2">
+                Testform 2
+                <h3>3. AJAX form submission with ng-click</h3>
+                <form name="personForm3" novalidate>
+                    <label for="firstNameEdit3">First name:</label>
+                    <input id="firstNameEdit3" type="text" name="firstName" ng-model="person3.firstName" required /><br />
+                    <label for="lastNameEdit3">Last name:</label>
+                    <input id="lastNameEdit3" type="text" name="lastName" ng-model="person3.lastName" required /><br />
+                    <br />
+                    <button type="submit"
+                            ng-click="submitData(person3);"
+                            ng-disabled="personForm3.$invalid">Submit</button>
+                </form>
+                <br />
+                <strong><label for="submitDebugText2">Submit result:</label></strong><br />
+                <textarea id="submitDebugText2">{{person3 | json}}</textarea>
+
+            </div>-->
+        </div>
+     </div>
+    <div class="col s8" ng-controller="PersonCtrl">
+        <form name="personForm">
+
+        <p> <i class="small material-icons">subject</i> &nbsp;Please enter your personal Data</p>
+     <div class="input-field">
+            <label for="form_last_name">Family Name</label>
+            <input type="text" id="form_last_name" name="form_last_name"
+                    ng-model="persondata.form_last_name"
+                    ng-minlength="3"
+                    ng-maxlength="25"
+                    required />
+            <div ng-show="personForm.form_last_name.$dirty && personForm.form_last_name.$invalid">
+                <div ng-show="personForm.form_last_name.$error.required">Your name is requiered.</div>
+                <div ng-show="personForm.form_last_name.$error.minlength">Last Name must be greater theen 3 letters</div>
+                <div ng-show="personForm.form_last_name.$error.maxlength">Last Name must be under 25 letters</div>
+            </div>
+        </div>
+        <div class="input-field">
+            <label for="form_pre_name">Prename</label>
+            <input type="text" id="form_pre_name" name="form_pre_name"
+                    ng-model="persondata.form_pre_name"
+                       ng-minlength="3"
+                       ng-maxlength="25"
+                       required />
+            <div ng-show="personForm.form_pre_name.$dirty && personForm.form_pre_name.$invalid">
+                <div ng-show="personForm.form_pre_name.$error.required">Your Prename is requiered.</div>
+                <div ng-show="personForm.form_pre_name.$error.minlength">Prename must be greater theen 3 letters</div>
+                <div ng-show="personForm.form_pre_name.$error.maxlength">Prename must be under 25 letters</div>
+            </div>
+        </div>
+        <div class="input-field">
+             <label for="form_email">E-Mail</label>
+             <input type="email" id="form_email" name="form_email" ng-model="persondata.form_email" required />
+             <div ng-show="personForm.form_email.$dirty && personForm.form_email.$invalid">
+                 <div ng-show="persondata.form_email.$dirty.email">That is not a valid e-mail adress</div>
+                 <div ng-show="persondata.form_email.$error.email">Please provide a valid e-mail adress</div>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col s8">
+                <div class="input-field">
+                    <label>Street Adress</label>
+                    <input type="text" id="form_street" name="form_street" ng-model="persondata.form_street"
+                            ng-minlength="3"
+                            ng-maxlength="30"
+                            required />
+                    <div ng-show="personForm.form_street.$dirty && personForm.form_street.$invalid">
+                        <div ng-show="personForm.form_street.$error.required">A street Name is requiered.</div>
+                        <div ng-show="personForm.form_street.$error.minlength">A Street Name must be greater theen 3 letters</div>
+                        <div ng-show="personForm.form_street.$error.maxlength">A Street Name must be under 30 letters</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="input-field">
+                    <label for="house_nr">House Nr.</label>
+                    <input type="number" id="house_nr" name="house_nr" ng-model="persondata.house_nr"
+                           ng-minlength="1" />
+                </div>
+            </div>
+        </div><!--   -->
+
+        <div class="row">
+            <div class="col s8">
+                <div class="input-field">
+                    <label for="city_name">City name</label>
+                    <input type="text" id="city_name" name="city_name" ng-model="persondata.city_name"
+                           ng-minlength="3"
+                           ng-maxlength="30"
+                           required />
+                    <div ng-show="personForm.city_name.$dirty && personForm.city_name.$invalid">
+                        <div ng-show="personForm.city_name.$error.required">A City Name is requiered.</div>
+                        <div ng-show="personForm.city_name.$error.minlength">There is no City with only 2 Letters in Switzerland</div>
+                        <div ng-show="personForm.city_name.$error.maxlength">There is no City with more than 30 Letters in Switzerland</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+            <button type="submit" class="btn btn-large right"
+                    ng-disabled="personForm.$dirty && personForm.$invalid"
+                    ng-click="personSubmit(personForm);">
+                Submit
+            </button>
+
+            </div>
+        </div>
+        </form>
+        <div class="col s10">
+            <p>personForm persondata.city: {{persondata}}</p>
+
+            <br/>
+            <p>Masta finalperson is: {{finalperson}}</p>
+            email finalperson: <p ng-model="finalperson.form_email">{{finalperson.form_email}}</p>
+        </div>
+    </div>
+</div>

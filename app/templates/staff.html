@@ -1,0 +1,137 @@
+<div class="row">
+    <div class="col s8">
+        <header>
+            <h2>Staff: These are the people behind virtual Pizza </h2>
+        </header>
+        <p>
+            So much work and so many tasty Pizzas.
+        </p>
+    </div>
+    <div class="col s4">
+        <strong>Let me See:</strong>
+        <br />
+        <button class="btn-large btn waves-effect  waves-light" ng-click="mngmt=true;" >The Management</button>
+        <br />
+        <br />
+        <button class="btn btn-large teal waves-effect  waves-light" ng-click="wrkrs=true">The Working Staff</button>
+        <br />
+        <br />
+        <button class="btn " ng-click="wrkrs=false;mngmt=false;">Fade Out!</button>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col s4" ng-if="mngmt" >
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light ">
+                <img class="activator" src="pix/lady5_400.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Christa Wolf<br /><small>Manager of Service</small><i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Christa Wolf<i class="material-icons right">close</i></span>
+                <p>Christa is the Manager of Food-delivery Service. She is responsible for our drone-fly-by-equipment to deliver our foot to your home right on time. <br/> Warm and fresch as you like it. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s4" ng-if="mngmt">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="pix/typ3_400.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Max Frisch <br /><small>Delivery Boy</small><i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Max Frisch<i class="material-icons right">close</i></span>
+                <p>He is responsible for coordinating all our bycicle delivery service. He drives as crazy as hell and no red traffic light will stop him.. fast as hell - he is our super-bike-delivery Hero!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col s4" ng-if="mngmt">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="pix/typ1_400.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Alex Solzhenitsyn<br/> <small>Head of Ingrediences</small><i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Alex Solzhenitsyn<i class="material-icons right">close</i></span>
+                <p>He is responsible for all our fresh ingredients of our pizza-Menu Card. He looks every day for fresh basil at the local market, he spends hours of hundrets of hours on pepper farms. He is the master of melting- Cheese.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--staff -->
+<div class="row">
+    <div class="col s6">
+        <div  ng-if="wrkrs" >
+            <div class="card-panel grey lighten-5 z-depth-2  fade staff"   >
+                <div class="row valign-wrapper">
+                    <div class="col s4">
+                        <img src="pix/lady1_400.jpg" alt="" class="circle responsive-img">
+                    </div>
+                    <div class="col s10">
+                        <div class="card-title"><h5>Agatha Christie</h5></div>
+                  <span class="black-text">
+                    She is our pizza -baker. She cooks with love and fresh ingredients...
+                  </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  ng-if="wrkrs">
+            <div class="card-panel grey lighten-5 z-depth-3 fade staff " >
+                <div class="row valign-wrapper">
+                    <div class="col s4">
+                        <img src="pix/typ4_400.jpg" alt="" class="circle responsive-img">
+                    </div>
+                    <div class="col s8">
+                        <div class="card-title"><h5>F. Dürrenmatt</h5></div>
+              <span class="black-text">
+                 this is our pizza -kurrier
+              </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div ng-if="wrkrs">
+            <div class="card-panel grey lighten-5 z-depth-3 fade staff " >
+                <div class="row valign-wrapper">
+                    <div class="col s4">
+                        <img src="pix/typ2_400.jpg" alt="" class="circle responsive-img">
+                    </div>
+                    <div class="col s8">
+                        <div class="card-title"><h5>P. Bichsel</h5></div>
+                  <span class="black-text">
+                     He helps in the Kitchen
+                  </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  ng-if="wrkrs">
+            <div class="card-panel grey lighten-5 z-depth-3 fade staff " >
+                <div class="row valign-wrapper">
+                    <div class="col s4">
+                        <img src="pix/lady3_400.jpg" alt="" class="circle responsive-img">
+                    </div>
+                    <div class="col s8">
+                        <div class="card-title"><h5>Hanna Arendt</h5></div>
+                  <span class="black-text">
+                     She is our Pizza in-Progress Coordination Staff
+                  </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+[
+  {"id": 1, "name": "Pizza Vegetaria", "price": 5 , "img": "pix/food1_400.jpg"},
+  {"id": 2, "name": "Pizza Margherita", "price": 5.5, "img": "pix/food2_400.jpg" },
+  {"id": 3, "name": "Pizza Hawaii", "price": 8, "img" : "pix/food3_400.jpg" },
+  {"id": 4, "name": "Pizza Rumania", "price": 9, "img" : "pix/food4_400.jpg" },
+  {"id": 5, "name": "Kaffee Creme", "price": 2.80, "img": "pix/kaffee_400.jpg" },
+  {"id": 6, "name": "Kaffee Latte Macciato", "price": 3.80,  "img": "pix/kaffee_400.jpg" },
+  {"id": 7, "name": "Kaffee Ice ", "price": 4.30, "img": "pix/kaffee_400.jpg" },
+  {"id": 8, "name": "Kaffee Tuerkisch", "price": 4.80, "img": "pix/kaffee_400.jpg" },
+  {"id": 9, "name": "Scharfes Oel ", "price": 0, "img": "pix/kaffee_400.jpg" },
+  {"id": 10, "name": "Extra Kaese ", "price": 0, "img": "pix/kaffee_400.jpg" },
+  {"id": 11, "name": "Billiger Fussel", "price": 12, "img": "pix/kaffee_400.jpg" }
+]

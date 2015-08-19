@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col 12">
+        <header>
+           <span> <i class="medium material-icons left">insert_chart</i><h3>Configure your own Pizza!</h3></span>
+        </header>
+    </div>
+</div>
+<div class="row" >
+   <div class="col s6" ng-controller="ingredientsCtrl" ng-init="hasBasePizza =false">
+       <h3>1. Basic Pizza</h3>
+            The Basic of a Pizza has Bread, Cheese & Tomatosauce.
+        <br />
+       <button class="btn small  waves-effect waves-light" ng-click="pizza.addBasic(ingredients);hasBasePizza = true">add basic</button>
+       <br />
+
+
+        <h3>2. add Ingredients</h3>
+       <table ng-show="hasBasePizza">
+           <thead>
+               <tr>
+                    <th>&nbsp;</th>
+                    <th>Ingredients</th>
+                    <th>Price</th>
+                    <th>&nbsp;</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr ng-repeat="zutat in ingredients | limitTo:ingredients.length: 1">
+               <!--<tr ng-repeat="zutat in ingredients | limitTo:limit:begin:3">-->
+                    <td><img ng-src="{{zutat.path}}" alt="#"> </td>
+                    <td>{{zutat.name}}</td>
+                    <td>{{zutat.cost | currency}}</td>
+                    <td>
+                        <div ng-hide="showAddbtn">
+                        <button class="btn small waves-effect waves-light"
+                                ng-click="pizza.addIngredients(zutat);">add to Pizza</button>
+                         </div>
+                    </td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+   <div class="col s6">
+       <h3>3. your own Pizza</h3>
+       <div ng-controller="PizzaCtrl">
+
+           <div class="amber text-accent-3" ng-hide="pizza.getIngredients().length">
+               No Ingredients choosen
+           </div>
+           <table ng-show="pizza.getIngredients().length">
+               <thead >
+                   <tr>
+                       <th>&nbsp;</th>
+                       <th>Ingredient</th>
+                       <th>Cost</th>
+                   </tr>
+               </thead>
+               <tbody >
+                    <tr ng-repeat="tst in pizza.addBasics()">
+                        <td>{{tst.path}}</td>
+                        <td>{{tst.name}}</td>
+                        <td>{{tst.cost}}</td>
+                    </tr>
+                    <tr ng-repeat="zutat in pizza.getIngredients() track by $index" >
+                        <td><img ng-src="{{zutat.path}}" alt="zutatbild"> </td>
+                        <td>{{zutat.name}}</td>
+                        <td>{{zutat.cost}}</td>
+                    </tr>
+                    <tr class="teal white-text">
+                        <td>Total:</td>
+                        <td>{{pizza.getIngredients().length}} Ingredients</td>
+                        <td>{{pizza.sum() | currency}}</td>
+                    </tr>
+               </tbody>
+           </table>
+        </div>
+    </div>
+</div>

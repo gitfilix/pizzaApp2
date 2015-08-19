@@ -1,0 +1,87 @@
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    background: #444;
+
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    border:  1px solid #333;
+}
+
+.flx-logo{
+    font-weight: 100;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+}
+
+.parallax-container {
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+footer.page-footer {
+    padding-top: 30px;
+    margin-top: 0px;
+}
+
+h3{
+    font-size: 1.4rem;
+}
+
+/* my buttons */
+.btn{
+    background: #ff8f00;
+    color: #F2F2F2;
+    transition:0.2s  ease-out all;
+}
+/*.btn:focus{*/
+    /*background: #ffd54f;*/
+    /*color: #FFF;*/
+    /*transition:0.2s  ease-out all;*/
+/*}*/
+
+.btn:hover{
+    background: #f57c00 ;
+    color: #FFF;
+    transition:0.3s  ease-out all;
+}
+
+/*animations*/
+
+.cart-item.ng-enter {
+    -webkit-transition:0.6s ease-out all;
+    transition:0.6s  ease-out all;
+    background-color: #ffa000 ;
+}
+.cart-item.ng-enter-active {
+    background-color: white;
+}
+
+.total-items.ng-enter-active {
+    -webkit-transition:0.6s ease-out all;
+    transition:0.6s  ease-out all;
+    background-color: #ffe57f  ;
+}
+
+.staff.fade.ng-enter {
+    transition:0.5s linear all;
+    opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.staff.fade.ng-enter.ng-enter-active {
+    opacity:1;
+}
+
+
+/*form validation*/
+input.ng-pristine { border-bottom:1px solid Gold; }
+input.ng-dirty.ng-valid { border-bottom:1px solid Green; }
+input.ng-dirty.ng-invalid { border-bottom:1px solid Red; }
+input.ng-dirty.ng-valid ~ span.ok { color:green; display:inline; }
+input.ng-dirty.ng-invalid ~ span.ko { color:red; display:inline; }

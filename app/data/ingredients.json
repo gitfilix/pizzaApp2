@@ -1,0 +1,12 @@
+[
+  {"name": "Basic Pizza", "cost": 5, "path": "pix/cheese_50.jpg" },
+  {"name": "Extra-cheese", "cost": 2, "path": "pix/cheese_50.jpg" },
+  {"name": "Basil", "cost": 1, "path": "pix/basil_50.jpg" },
+  {"name": "Bacon", "cost": 3, "path": "pix/bacon_50.jpg" },
+  {"name": "Garlic", "cost": 1.50, "path": "pix/garlic_50.jpg" },
+  {"name": "Brocoli", "cost": 1.40, "path": "pix/broccoli_50.jpg" },
+  {"name": "Salami", "cost": 2.50, "path": "pix/salami_50.jpg" },
+  {"name": "Mushrooms", "cost": 1.5, "path": "pix/mushroom_50.jpg" },
+  {"name": "Green Pepper", "cost": 0.40, "path": "pix/greenpepper_50.jpg" },
+  {"name": "Red Pepper", "cost": 0.20, "path": "pix/redpepper_50.jpg" }
+]

@@ -1,0 +1,10 @@
+[
+  Person{
+    "last_name" : "",
+    "pre_name" : "",
+    "form_email" : "me@webkanal.ch",
+    "form_street": "",
+    "house_nr": "",
+    "city_name":"magglingen"
+  }
+]

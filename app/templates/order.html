@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col s6">
+        <h3 >Menu Suche</h3>
+        <div class="input-field">
+            <input type="text" ng-model="search" id="searchfood">
+            <label for="searchfood">Menu Suche</label>
+            <p ng-show="search" >Du suchst gerade nach: {{search}}</p>
+        </div>
+        <div>
+            <h3>Menu</h3>
+            <table ng-controller="ArticlesCtrl">
+                <thead>
+                <tr>
+                    <th data-field="id">ID</th>
+                    <th data-field="img-path">&nbsp;</th>
+                    <th data-field="name">Name</th>
+                    <th data-field="Price">Preis</th>
+                    <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="article in articles | filter:search" >
+                    <td>{{article.id}}</td>
+                    <td><img src="{{article.img}}" alt="bild fehlt"  style="max-width: 60px;"/></td>
+                    <td>{{article.name}}</td>
+                    <td><price value="article.price" /></td>
+                    <td><button class="btn text-accent-3 small" ng-click="cart.addArticle(article);">Bestellen</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--<div class="col s2">&nbsp;</div>-->
+    <div class="col s6 ">
+        <h3 >Meine Bestellung</h3>
+        <br />
+        <div ng-controller="CartCtrl">
+            <div class="" ng-hide="cart.getItems().length" > -keine Bestellung zurzeit -</div>
+            <table ng-show="cart.getItems().length" >
+                <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Artikel</th>
+                    <th>Preis</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in cart.getItems() track by $index"  class="cart-item">
+                    <td><img src="{{item.img}}" alt="bild fehlt"  style="max-width: 60px;"/></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price  | currency }}</td>
+                </tr>
+                <tr class="deep-orange white-text total-items">
+                    <td>{{cart.getItems().length}} Artikel</td>
+                    <td>Total</td>
+                    <td>{{cart.sum() | currency }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

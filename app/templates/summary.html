@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="s6">
+            <h3>Summary of your order</h3>
+            <br/>
+
+            <h5>your personal data</h5>
+            <div ng-controller="PersonCtrl" >
+                finalperson is {{finalperson}}
+
+                <p>Name: {{persondata.form_last_name}}</p>
+                <p>Prename: {{persondata.form_pre_name}}</p>
+                <p>Adress: {{persondata.form_street}}</p>
+                <p>e-mail:{{persondata.form_email}}</p>
+                email finalperson: <p ng-model="finalperson.form_email">{{finalperson.form_email}}</p>
+                <br />
+
+            </div>
+                <div ng-controller="ExampleCtrl">
+                    <!--Example name: <p ng-bind-template="{{$scope.name}}"></p>-->
+                    2nd try: <p ng-repeat="item in $scope.masta">{{name}}</p>
+                    <p>masta = {{$scope.masta}}</p>
+                </div>
+
+
+        </div>
+        <div class="s6">
+            <title>Menu Orders</title>
+            <div ng-controller="CartCtrl">
+                <table ng-show="cart.getItems().length">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Artikel</th>
+                            <th>Preis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="item in cart.getItems() track by $index"  class="cart-item">
+                            <td><img src="{{item.img}}" alt="bild fehlt"  style="max-width: 60px;"/></td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.price  | currency }}</td>
+                        </tr>
+                        <tr class="deep-orange white-text total-items">
+                            <td>{{cart.getItems().length}} Artikel</td>
+                            <td>Total</td>
+                            <td>{{cart.sum() | currency }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            Your own Style pizza
+            <div ng-controller="PizzaCtrl">
+                <table ng-show="pizza.getIngredients().length">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Ingredient</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="zutat in pizza.getIngredients() track by $index" >
+                            <td><img ng-src="{{zutat.path}}" alt="zutatbild"> </td>
+                            <td>{{zutat.name}}</td>
+                            <td>{{zutat.cost}}</td>
+                        </tr>
+                        <tr class="teal white-text">
+                            <td>Total:</td>
+                            <td>{{pizza.getIngredients().length}} Ingredients</td>
+                            <td>{{pizza.sum() | currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>
